@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-8 offset-2">
+        <h4 class="center italic">Here are a few of the professional alteration and tailoring services that I offer:</h4>
+    </div>
+</div>
+<br/>
+<div class="row">
+    <div class="col-3 offset-3">
+        <ul>
+            <li *ngFor="let item of leftItems">
+                {{ item }}
+            </li>
+        </ul>
+    </div>
+    <div class="col-3 offset-1">
+        <ul>
+            <li *ngFor="let item of rightItems">
+                {{ item }}
+            </li>
+        </ul>
+    </div>
+</div>

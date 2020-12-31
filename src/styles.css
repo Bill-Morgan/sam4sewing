@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-image: linear-gradient(gray, white);
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.right {
+    margin-left: auto;
+    margin-right: 0px;
+}
+
+.italic {
+    font-style: italic;
+}
+.bold {
+    font-weight: bold;
+}
+
+.large {
+    font-size: large;
+}
+
+.xlarge {
+    font-size: x-large;
+}
+
+.xxlarge {
+    font-size: xx-large;
+}
+
