@@ -1,0 +1,30 @@
+div {
+    color: white;
+}
+
+img {
+    max-height: 500px;
+}
+
+.slide-show {
+    margin-left: 0px;
+    margin-right: 0px;
+    height: 500px;
+}
+
+.sscenter {
+    /* height: 500px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ssvcenter {
+    /* height: 500px; */
+    display: flex;
+    align-items: center;
+}
+
+a:hover {
+    cursor:pointer;
+}

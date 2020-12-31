@@ -9,6 +9,11 @@ import { FacebookComponent } from './facebook/facebook.component';
 import { FooterComponent } from './footer/footer.component';
 import { ServicesComponent } from './services/services.component';
 import { MemorialBearsComponent } from './memorial-bears/memorial-bears.component';
+import { ContactComponent } from './contact/contact.component';
+import { PromotionsComponent } from './promotions/promotions.component';
+import { PhotosComponent } from './photos/photos.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { SlideShowComponent } from './slide-show/slide-show.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +23,12 @@ import { MemorialBearsComponent } from './memorial-bears/memorial-bears.componen
     FacebookComponent,
     FooterComponent,
     ServicesComponent,
-    MemorialBearsComponent
+    MemorialBearsComponent,
+    ContactComponent,
+    PromotionsComponent,
+    PhotosComponent,
+    NavbarComponent,
+    SlideShowComponent
   ],
   imports: [
     BrowserModule,

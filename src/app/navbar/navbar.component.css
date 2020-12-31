@@ -1,0 +1,10 @@
+.sam-navbar {
+    background-color: plum;
+    margin-top: 0px;
+}
+.navbar-toggler {
+    border: 0px;
+}
+.is-active, .active {
+    border: 1px solid rgb(179, 96, 179);
+}

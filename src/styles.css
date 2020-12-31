@@ -3,6 +3,25 @@ body {
     background-image: linear-gradient(gray, white);
 }
 
+.blackbg {
+    background-color: black;
+}
+
+.greenbg {
+    background-color: green;
+}
+
+.white {
+    color: white;
+}
+
+.goldenbg {
+    background-color: gold;
+}
+.smspace {
+    line-height: 75%;
+}
+
 .center {
     margin-left: auto;
     margin-right: auto;
@@ -14,9 +33,25 @@ body {
     margin-right: 0px;
 }
 
+.left {
+    margin-left: 0px;
+    margin-right: auto;
+}
+
+.top {
+    margin-top: 0px;
+    margin-bottom: auto;
+}
+
+.bottom {
+    margin-top: auto;
+    margin-bottom: 0px;
+}
+
 .italic {
     font-style: italic;
 }
+
 .bold {
     font-weight: bold;
 }
@@ -32,4 +67,3 @@ body {
 .xxlarge {
     font-size: xx-large;
 }
-
