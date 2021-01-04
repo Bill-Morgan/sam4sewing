@@ -10,6 +10,7 @@ import { SendMessageService } from '../send-message.service';
 export class ContactComponent implements OnInit {
   contactForm: FormGroup;
   emailMessage: {};
+  accessToken;
 
   constructor(private emailService: SendMessageService) { }
 
@@ -27,11 +28,7 @@ export class ContactComponent implements OnInit {
   onSubmit() {
     console.log("calling send email")
     let email = this.buildEmialMessage();
-    console.log("the email is: " + email.messagePlainText);
-    this.emailService.login().subscribe((results) => {
-      console.log("called send email");
-      console.log(results);
-    });
+    this.emailService.emailMessage(email);
   }
 
   buildEmialMessage() {

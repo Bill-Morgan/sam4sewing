@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 
 
 @NgModule({
-  declarations: [];
+  declarations: [],
   imports: [
     CommonModule
   ]
@@ -15,7 +15,7 @@ export class PostInputsModule {
     "date": Date;// The date the email was received by the server.
     "from": string;// From address.
     "selectedFrom": string;// Source of the from address. [alias; domainalias; smtpaccount; plusaddress]
-    "priority": enum (see MessagePriorities);
+    "priority": number; // (see MessagePriorities);
     "replyTo": string;// The reply-to address.
     "subject": string;// The item's subject string.
     "to": string;// To address. [Required]
@@ -27,28 +27,25 @@ export class PostInputsModule {
     "folder": string;// The name of the folder.
     "replyUid": number;
     "draftUid": number;
-    "actions": // The various email flags settings.
+    "actions": boolean// The various email flags settings.
     // This element is a dictionary.
-    "key": boolean;
-    ...
+    //"key": boolean;
     ;
     "readReceiptRequested": boolean;// Flag used to determine if a read receipt is needed.
     "deliveryReceiptRequested": boolean;
-    "originalCidLinks":
+    "originalCidLinks": any;
     // This element is a dictionary.
-    "key": string;
-    ...
-    ;
+    // "key": string;
     "excludeFiles": // A list of files that should be excluded from the email.
     [
     number
-    ...
+    // ...
     ]
     ;
     "inlineToRemove":
     [
     string
-    ...
+    // ...
     ]
     ;
     "attachedMessages": // A list of emails that are being attached to the current email.
@@ -58,7 +55,6 @@ export class PostInputsModule {
     "folder": string;// The name of the folder.
     "uid": number// The unique Id.
     }
-    ...
+    // ...
     ]
-    
 }

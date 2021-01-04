@@ -8,26 +8,35 @@ export class SendMessageService {
 
   constructor(private http: HttpClient) { }
   url = 'http://mail.wamusa.com/';
-  path = 'api/v1/auth/authenticate-user';
-  fullUrl = this.url + this.path;
+  authPath = 'api/v1/auth/authenticate-user';
+  sendPath = 'api/v1/mail/message-put'
   postInputs = {
     "username": "billm",
     "password": "z95Jvwr^Yk65EgDuivF"
   }
 
-  sendMessage(email: {}) {
-    let autoLoginToken;
-    return this.login().subscribe(results => {
-      autoLoginToken = results['autoLoginToken'];
-      this.emailMessage(email)
-    })
-  }
+  // sendMessage(email: {}) {
+  //   let autoLoginToken;
+  //   this.login().subscribe(results => {
+  //     autoLoginToken = results['autoLoginToken'];
+  //     // this.emailMessage(email)
+  //   })
+  // }
 
   login() {
-    return this.http.post(this.fullUrl, this.postInputs);
+    let fullUrl = this.url + this.authPath
+    return this.http.post(fullUrl, this.postInputs);
   }
 
   emailMessage(email: {}) {
-    return this.http.post(this.fullUrl, email);
+    let fullUrl = this.url + this.sendPath
+    this.login()
+      .subscribe((results) => { 
+        let accessToken = "Bearer " + results['accessToken'];
+        this.http.post(fullUrl, email, {headers: {"Authorization": accessToken}})
+          .subscribe((results) => {
+          console.log(results);
+        });
+    });
   }
 }
