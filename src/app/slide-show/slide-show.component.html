@@ -1,15 +1,18 @@
-<div class="row">
-    <div class="col slide-show sscenter">
-        <img src="{{ curImage }}" class="img-fluid">
+    <div class="row">
+        <div class="col sscenter">
+            <img src="{{ curImage }}" (click)="onToggleFullSize()" class="img-fluid"  [class.smlimg]="!fullSize">>
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-4-md offset-4-md col-6 offset-3 blackbg">
-        <a (click)="onIncerment(-1)" *ngIf="!isRunning">&#9754;</a>
-        <a (click)="onStartStop()">&nbsp;&nbsp;{{ isRunning ? "&#9995;" : "&#10151;" }}&nbsp;&nbsp;</a>
-        <a (click)="onIncerment(1)" *ngIf="!isRunning">&#9755;</a>
+    <div class="row" *ngIf="!fullSize">
+        <div class="col-4-md offset-4-md col-6 offset-3 blackbg">
+            <a (click)="onIncerment(-1)" *ngIf="!isRunning">&#9754;</a>
+            <a (click)="onStartStop()">&nbsp;&nbsp;{{ isRunning ? "&#9995;" : "&#10151;" }}&nbsp;&nbsp;</a>
+            <a (click)="onIncerment(1)" *ngIf="!isRunning">&#9755;</a>
+        </div>
+        <div class="col-4-md col-6 offset-3 blackbg">
+            &nbsp;&nbsp;{{ index + 1 }} / {{ images.length }}
+        </div>
+        <!-- <div class="col-4-md col-6 offset-3 blackbg">
+            <input type="text" value="{{ index + 1 }}" size="3" (focus)="onInputFocus()" (blur)="onInputBlur()" #curImg> / {{ images.length }}
+        </div> -->
     </div>
-    <div class="col-4-md col-6 offset-3 blackbg">
-        &nbsp;&nbsp;{{ index + 1 }} / {{ images.length }}
-    </div>
-</div>

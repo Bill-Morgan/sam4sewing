@@ -1,1 +1,50 @@
-<p>contact works!</p>
+<div class="row">
+    <div class="col centertext">
+        <app-facebook></app-facebook>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-8 offset-md-2 center centertext">
+        <h3>Contact Me</h3>
+        <h5>I work by appointment only and will do my best to accommodate your schedule with evening hours if necessary.
+            Please call and leave a message or send an e-mail with your request.
+        </h5><br>
+        <h3>Call or Text:</h3>
+        <h5>781-412=4726</h5><br>
+        <h3>Call:</h3>
+        <h5>618-346-6802</h5><br><br>
+    </div>
+    <div class="col-md-6 offset-md-3 smborder">
+        <h3 class="centertext">Send me a message:</h3>
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label>Name:</label>
+                <input type="text" class="form-control" formControlName="name">
+            </div>
+            <div class="form-group" hidden>
+                <label>Event Type:</label>
+                <input type="text" class="form-control"  formControlName="eventType">
+            </div>
+            <div class="form-group">
+                <label>Phone:</label>
+                <input type="text" class="form-control"  formControlName="phone">
+            </div>
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="text" class="form-control"  formControlName="email">
+            </div>
+            <div class="form-group">
+                <label>Event Date:</label>
+                <input type="date" class="form-control"  formControlName="eventDate">
+            </div>
+            <div class="form-group">
+                <label>Notes:</label>
+                <textarea class="form-control" name="" id="" rows="5"  formControlName="notes"></textarea>
+            </div>
+            <div class="center centertext">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+            <br>
+        </form>
+    </div>
+</div>

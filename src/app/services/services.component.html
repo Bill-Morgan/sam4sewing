@@ -1,21 +1,20 @@
 <div class="row">
-    <div class="col-8 offset-2">
-        <h4 class="center italic">Here are a few of the professional alteration and tailoring services that I offer:</h4>
+    <div class="col-8 offset-2 centertext">
+        <h4 class="center italic">Here are a few of the professional alteration and tailoring services that I offer:
+        </h4>
     </div>
 </div>
-<br/>
+<br />
 <div class="row">
-    <div class="col-md-4 offset-lg-2 offset-1 col-10">
+    <div class="col-lg-4 offset-2 col-8" *ngFor="let items of [leftItems, rightItems]">
         <ul>
-            <li *ngFor="let item of leftItems">
-                {{ item }}
-            </li>
-        </ul>
-    </div>
-    <div class="col-md-4 offset-1 col-10">
-        <ul>
-            <li *ngFor="let item of rightItems">
-                {{ item }}
+            <li *ngFor="let item of items">
+                <a *ngIf="item === 'Memorial Bears'" [routerLink]="['/memorialbears']">
+                    {{ item }}
+                </a>
+                <span *ngIf="item != 'Memorial Bears'">
+                    {{ item }}
+                </span>
             </li>
         </ul>
     </div>

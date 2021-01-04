@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./services.component.css']
 })
 export class ServicesComponent implements OnInit {
-  leftItems = [
+  items = [
     "Wedding Gowns",
     "Bride’s Maids’ Dresses",
     "Mothers’ Dresses",
@@ -24,28 +24,29 @@ export class ServicesComponent implements OnInit {
     "Jeans Repair",
     "Waist in/out",
     "Crotch in/out",
-    "Sides in/out"]
-
-    rightItems = [
-      "Shorten Shoulders",
-      "Shorten Sleeves",
-      "Hems by Hand or Machine",
-      "Hems w/ Cuff",
-      "Replace Lining",
-      "Button Repairs",
-      "Button Holes",
-      "Taper Sleeves",
-      "Shorten Coat",
-      "Repair Jeans",
-      "Lower Collar",
-      "Shorten Collar",
-      "Replace Zippers",
-      "Taper legs",
-      "Mending Work",
-      "Slip Rentals",
-      "Custom Craft Items",
-      "Memorial Bears",
-    ]
+    "Sides in/out",
+    "Shorten Shoulders",
+    "Shorten Sleeves",
+    "Hems by Hand or Machine",
+    "Hems w/ Cuff",
+    "Replace Lining",
+    "Button Repairs",
+    "Button Holes",
+    "Taper Sleeves",
+    "Shorten Coat",
+    "Repair Jeans",
+    "Lower Collar",
+    "Shorten Collar",
+    "Replace Zippers",
+    "Taper legs",
+    "Mending Work",
+    "Slip Rentals",
+    "Custom Craft Items",
+    "Memorial Bears"
+  ]
+  midPoint = (this.items.length + 1) / 2;
+  leftItems = this.items.slice(0, this.midPoint);
+  rightItems = this.items.slice(this.midPoint);
   constructor() { }
 
   ngOnInit(): void {
