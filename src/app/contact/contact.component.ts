@@ -16,12 +16,12 @@ export class ContactComponent implements OnInit {
 
   ngOnInit(): void {
     this.contactForm = new FormGroup({
-      "name": new FormControl(null, Validators.required),
+      "name": new FormControl(null),// Validators.required),
       "eventType": new FormControl(null),
       "phone": new FormControl(null),
-      "email": new FormControl(null, [Validators.required, Validators.email]),
+      "email": new FormControl(null),// [Validators.required, Validators.email]),
       "eventDate": new FormControl(null),
-      "notes": new FormControl(null, Validators.required)
+      "notes": new FormControl(null) //, Validators.required)
     })
   }
 
@@ -33,7 +33,7 @@ export class ContactComponent implements OnInit {
 
   buildEmialMessage() {
     return {
-      'from': 'billm@wamusa.com',
+      'from': 'webrequest@sam4sewing.com',
       'to': 'billm@wamusa.com',
       'subject': 'website contact request',
       'messagePlainText':

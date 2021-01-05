@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import * as Data from '../credentials.json'
 
 @Injectable({
   providedIn: 'root'
@@ -7,31 +8,21 @@ import { HttpClient } from '@angular/common/http';
 export class SendMessageService {
 
   constructor(private http: HttpClient) { }
-  url = 'http://mail.wamusa.com/';
+  url = 'http://mail.sam4sewing.com/';
   authPath = 'api/v1/auth/authenticate-user';
   sendPath = 'api/v1/mail/message-put'
-  postInputs = {
-    "username": "billm",
-    "password": "z95Jvwr^Yk65EgDuivF"
-  }
+  postInputs = Data['default'];
 
-  // sendMessage(email: {}) {
-  //   let autoLoginToken;
-  //   this.login().subscribe(results => {
-  //     autoLoginToken = results['autoLoginToken'];
-  //     // this.emailMessage(email)
-  //   })
-  // }
-
-  login() {
+  private login() {
     let fullUrl = this.url + this.authPath
     return this.http.post(fullUrl, this.postInputs);
   }
 
   emailMessage(email: {}) {
-    let fullUrl = this.url + this.sendPath
+    console.log(this.postInputs);
     this.login()
       .subscribe((results) => { 
+        let fullUrl = this.url + this.sendPath
         let accessToken = "Bearer " + results['accessToken'];
         this.http.post(fullUrl, email, {headers: {"Authorization": accessToken}})
           .subscribe((results) => {
