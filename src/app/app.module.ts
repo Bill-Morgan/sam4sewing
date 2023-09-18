@@ -1,44 +1,40 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms'
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from './header/header.component';
-import { FacebookComponent } from './facebook/facebook.component';
 import { FooterComponent } from './footer/footer.component';
-import { ServicesComponent } from './services/services.component';
-import { MemorialBearsComponent } from './memorial-bears/memorial-bears.component';
-import { ContactComponent } from './contact/contact.component';
-import { PromotionsComponent } from './promotions/promotions.component';
-import { PhotosComponent } from './photos/photos.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { SlideShowComponent } from './slide-show/slide-show.component';
+import { AppRoutingModule } from './app-routing.module';
+import { PhotosModule } from './photos/photos.module';
+import { MemorialBearsModule } from './memorial-bears/memorial-bears.module';
+import { ContactModule } from './contact/contact.module';
+import { FacebookModule } from './facebook/facebook.module';
+import { ServicesModule } from './services/services.module';
+import { HomeModule } from './home/home.module';
+import { PromotionsModule } from './promotions/promotions.module';
+import { HeaderModule } from './header/header.module';
+import { BannerScrollDirective } from './banner-scroll.directive';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    HeaderComponent,
-    FacebookComponent,
     FooterComponent,
-    ServicesComponent,
-    MemorialBearsComponent,
-    ContactComponent,
-    PromotionsComponent,
-    PhotosComponent,
-    NavbarComponent,
-    SlideShowComponent
+    BannerScrollDirective,
+    HighlightDirective,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    ReactiveFormsModule
+    PhotosModule,
+    MemorialBearsModule,
+    ContactModule,
+    ServicesModule,
+    HomeModule,
+    PromotionsModule,
+    FacebookModule,
+    HeaderModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

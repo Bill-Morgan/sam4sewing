@@ -1,24 +1,17 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { ContactComponent } from './contact/contact.component';
-import { HomeComponent } from './home/home.component';
-import { MemorialBearsComponent } from './memorial-bears/memorial-bears.component';
-import { PhotosComponent } from './photos/photos.component';
-import { PromotionsComponent } from './promotions/promotions.component';
-import { ServicesComponent } from './services/services.component'
+import { PreloadAllModules, PreloadingStrategy, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', component:  HomeComponent},
-  { path: 'services', component: ServicesComponent},
-  { path: 'memorialbears', component: MemorialBearsComponent},
-  { path: 'photos', component: PhotosComponent},
-  { path: 'contact', component: ContactComponent},
-  { path: 'memorialbears', component: MemorialBearsComponent},
-  { path: 'promotions', component: PromotionsComponent}
+  { path: '', loadChildren: () => import('./home/home.module').then(m => m.HomeModule)},
+  { path: 'services', loadChildren: () => import('./services/services.module').then(m => m.ServicesModule)},
+  { path: 'memorialbears', loadChildren: () => import('./memorial-bears/memorial-bears.module').then(m => m.MemorialBearsModule)},
+  { path: 'photos', loadChildren: () => import('./photos/photos.module').then(m => m.PhotosModule)},
+  { path: 'contact', loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)},
+  { path: 'promotions', loadChildren: () => import('./promotions/promotions.module').then(m => m.PromotionsModule)}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
